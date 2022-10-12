@@ -27,19 +27,19 @@ import { MassiveModule } from "@nestjsplus/massive";
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'build'),
     }),
-    MassiveModule.register({
+//     MassiveModule.register({
 
-user: process.env.POSTGRES_USERNAME || "<local-postgres-user>",
+// user: process.env.POSTGRES_USERNAME || "<local-postgres-user>",
 
-password: process.env.POSTGRES_PASSWORD || "<local-postgres-password>",
+// password: process.env.POSTGRES_PASSWORD || "<local-postgres-password>",
 
-host: process.env.POSTGRES_HOST || "localhost",
+// host: process.env.POSTGRES_HOST || "localhost",
 
-port: 5432,
+// port: 5432,
 
-database: process.env.POSTGRES_DATABASE ||"<local-postgres-db-name>"
+// database: process.env.POSTGRES_DATABASE ||"<local-postgres-db-name>"
 
-}),
+// }),
     UsersModule,
   ],
   controllers: [],
