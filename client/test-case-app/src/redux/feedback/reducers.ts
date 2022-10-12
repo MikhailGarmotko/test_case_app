@@ -14,7 +14,7 @@ const initialState: stateFeedBack = {
   error: false,
 };
 
-const url = "http://localhost:3000/users/create";
+const url = "users/create";
 
 export const postFeedBack = createAsyncThunk(
   "feedBackList/feedBackPost",
