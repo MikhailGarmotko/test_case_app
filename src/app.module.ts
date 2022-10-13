@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import entities from './typeorm';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-import { MassiveModule } from "@nestjsplus/massive";
+// import { MassiveModule } from "@nestjsplus/massive";
 
 @Module({
   imports: [
