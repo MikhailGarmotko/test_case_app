@@ -19,6 +19,7 @@ import { join } from 'path';
         username: configService.get('DB_USER'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_DATABASE'),
+        ssl: configService.get("ENV") === "development" ? false : { rejectUnauthorized: false},
         entities: entities,
         synchronize: true,
       }),
