@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import entities from './typeorm';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-// import { MassiveModule } from "@nestjsplus/massive";
+import { MassiveModule } from "@nestjsplus/massive";
 
 @Module({
   imports: [
@@ -16,9 +16,9 @@ import { join } from 'path';
         type: 'postgres',
         host: configService.get('DB_HOST'),
         port: +configService.get<number>('DB_PORT'),
-        username: configService.get('DB_USERNAME'),
+        username: configService.get('DB_USER'),
         password: configService.get('DB_PASSWORD'),
-        database: configService.get('DB_NAME'),
+        database: configService.get('DB_DATABASE'),
         entities: entities,
         synchronize: true,
       }),
