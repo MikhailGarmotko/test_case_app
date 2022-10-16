@@ -5,7 +5,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import entities from './typeorm';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-// import { MassiveModule } from "@nestjsplus/massive";
 
 @Module({
   imports: [
@@ -28,19 +27,7 @@ import { join } from 'path';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'build'),
     }),
-//     MassiveModule.register({
 
-// user: process.env.POSTGRES_USERNAME || "<local-postgres-user>",
-
-// password: process.env.POSTGRES_PASSWORD || "<local-postgres-password>",
-
-// host: process.env.POSTGRES_HOST || "localhost",
-
-// port: 5432,
-
-// database: process.env.POSTGRES_DATABASE ||"<local-postgres-db-name>"
-
-// }),
     UsersModule,
   ],
   controllers: [],

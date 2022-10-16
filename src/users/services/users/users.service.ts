@@ -13,6 +13,9 @@ export class UsersService {
   getUsers() {
     return this.userRepository.find();
   }
+  getUsersById(id:any) {
+    return this.userRepository.findOne(id);
+  }
   createUser(createUserDto: CreateUserDto) {
     const newUser = this.userRepository.create(createUserDto);
     return this.userRepository.save(newUser);
