@@ -19,7 +19,7 @@ export class UsersController {
   getUsers() {
     return this.userService.getUsers();
   }
-  @Get('id/:id')
+  @Get(':id')
   getUsersById(@Param('id', ParseIntPipe) id:number) {
     return this.userService.getUsersById(id)
   }
