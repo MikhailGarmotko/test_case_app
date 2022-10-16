@@ -5,6 +5,7 @@ import {
   Param,
   ParseIntPipe,
   Post,
+  Delete,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
@@ -21,11 +22,16 @@ export class UsersController {
   }
   @Get(':id')
   getUsersById(@Param('id', ParseIntPipe) id: number) {
-    return this.userService.getUsersById(id)
+    return this.userService.getUsersById(id);
   }
   @Post('create')
   @UsePipes(ValidationPipe)
   createUsers(@Body() createUserDto: CreateUserDto) {
     return this.userService.createUser(createUserDto);
+  }
+
+  @Delete(':id')
+  deleteUserById(@Param('id', ParseIntPipe) id: number) {
+    return this.userService.deleteUserById(id);
   }
 }
