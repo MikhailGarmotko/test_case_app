@@ -13,8 +13,15 @@ export class UsersService {
   getUsers() {
     return this.userRepository.find();
   }
+  getUsersById(id: number) {
+    return this.userRepository.findOne({ where: { id: id } });
+  }
   createUser(createUserDto: CreateUserDto) {
     const newUser = this.userRepository.create(createUserDto);
     return this.userRepository.save(newUser);
+  }
+
+  deleteUserById(id: number) {
+    return this.userRepository.delete(id);
   }
 }

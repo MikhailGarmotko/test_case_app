@@ -2,8 +2,6 @@ import React from "react";
 import { useAppDispatch, useAppSelector } from "./redux/hook";
 import { postFeedBack, selectFeedBack } from "./redux/feedback/reducers";
 import { useState } from "react";
-import img from "./styles/img/Vector2.png"
-import smile from "./styles/img/smile_footer.png";
 import smile2 from "./styles/img/smile_footer2.png";
 import {
   FeedBackFormPicture,
@@ -21,12 +19,12 @@ import {
   Smile,Smile2,Smile3
 } from "./styles/style";
 
+
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
 
-  const { data, pending, error } = useAppSelector(selectFeedBack);
-
   const [responseBody, setResponseBody] = useState({});
+
   const inputChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setResponseBody({ ...responseBody, [name]: value });
@@ -38,33 +36,34 @@ const App: React.FC = () => {
   const onSubmitForm = (e: React.BaseSyntheticEvent<any>) => {
     e.preventDefault();
     dispatch(postFeedBack(responseBody));
+    e.currentTarget.children["name"].value = "";
+    e.currentTarget.children["email"].value = "";
+    e.currentTarget.children["message"].value = "";
   };
+
   return (
     <>
-      {" "}
       <GlobalStyle />
       <Container>
         <FeedbackContainer>
           <FeedBackForm>
             <FeedBackFormPicture>
-              <Img>
-                {/* <img src={img}></img> */}
-              </Img>
+              <Img></Img>
             </FeedBackFormPicture>
             <Form onSubmit={onSubmitForm}>
               <Title>Reach out to us!</Title>
               <Input
-                placeholder="Your name*"
+                placeholder="You name*"
                 name="name"
                 onChange={(e) => inputChangeHandler(e)}
               ></Input>
               <Input
-                placeholder="Your email*"
+                placeholder="You email*"
                 name="email"
                 onChange={(e) => inputChangeHandler(e)}
               ></Input>
               <TextInput
-                placeholder="Your message*"
+                placeholder="You message*"
                 name="message"
                 onChange={(e) => inputChangeTextHandler(e)}
               ></TextInput>
