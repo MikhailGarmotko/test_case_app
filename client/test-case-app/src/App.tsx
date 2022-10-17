@@ -14,6 +14,7 @@ import {
   FeedbackContainer,
   GlobalStyle,
   Input,
+  EmailInput, 
   TextInput,
   FeedBackForm,Img,
   Smile,Smile2,Smile3
@@ -56,16 +57,19 @@ const App: React.FC = () => {
                 placeholder="You name*"
                 name="name"
                 onChange={(e) => inputChangeHandler(e)}
+                required
               ></Input>
-              <Input
+              <EmailInput
                 placeholder="You email*"
                 name="email"
                 onChange={(e) => inputChangeHandler(e)}
-              ></Input>
+                required
+              ></EmailInput>
               <TextInput
                 placeholder="You message*"
                 name="message"
                 onChange={(e) => inputChangeTextHandler(e)}
+                required
               ></TextInput>
               <Button>Send message</Button>
             </Form>

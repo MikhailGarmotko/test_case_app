@@ -161,6 +161,17 @@ export const Input = styled.input`
   }
 `;
 
+export const EmailInput = styled.input.attrs({type:"email"})`
+  width: 50%;
+  height: 10%;
+  padding: 5px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  @media (max-width: 1180px) {
+    width: 80%;
+  }
+`;
+
 export const TextInput = styled.textarea`
   width: 50%;
   height: 20%;
